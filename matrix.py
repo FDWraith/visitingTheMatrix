@@ -11,28 +11,28 @@ def print_matrix( matrix ):
     print(finString)
 
 def ident( matrix ):
-    for row in range( matrix.length ):
-        for col in range( matrix[row].length ):
+    for row in range( len( matrix ) ):
+        for col in range( len( matrix[row] ) ):
             if row == col:
                 matrix[row][col] = 1
             else:
                 matrix[row][col] = 0
 
 def scalar_mult( matrix, s ):
-    for row in range( matrix.length ):
-        for col in range( matrix[row].length ):
+    for row in range( len( matrix ) ):
+        for col in range( len( matrix[row] ) ):
             matrix[row][col] = matrix[row][col] * s;
 
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    for col in range(m2[0].length):
-        for row in range(m2.length):
+    for col in range( len( m2[0] ) ):
+        for row in range( len( m2 ) ):
             m2[row][col] = multRowCol( m1[row], m2, col)
     
     
 def multRowCol( m1Row, m2, m2Col ):
     sum = 0;
-    for index in m1Row.length:
+    for index in range( len( m1Row ) ):
         sum += m1Row[index] * m2[index][m2Col];
     return sum;
 
