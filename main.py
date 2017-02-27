@@ -21,19 +21,29 @@ for i in range(0, 500, 8):
 
 draw_lines( matrix, screen, color )
 
-
-
+print "Testing Identity Matrix\n" 
 identMatrix = new_matrix()
-print_matrix( identMatrix )
-
+#print_matrix( identMatrix )
 ident( identMatrix )
 print_matrix( identMatrix )
+
+print "\nTesting Scalar Multiplication\n"
 scalar_mult( identMatrix, 9 )
 print_matrix( identMatrix )
 
-scalar_mult( matrix, 7 )
+print "\nCreating New Matrix and Adding Edge\n"
+testMatrix = new_matrix()
+add_edge( testMatrix, 120, 120, 0, 15, 15, 0)
+print_matrix( testMatrix )
 
-matrix_mult( identMatrix, matrix )
+print "\nTesting Matrix Multiplication with a Fresh Identity Matrix"
+secondIdent = new_matrix()
+ident( secondIdent )
+matrix_mult( secondIdent, testMatrix )
+print_matrix( testMatrix )
+#scalar_mult( matrix, 7 )
+
+#matrix_mult( identMatrix, matrix )
 
 #color = [ 255, 0 , 0]
 
